@@ -9,7 +9,7 @@ import java.io.File;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = ".",dryRun = false, tags = {"@menu"})
+@CucumberOptions(features = ".",dryRun = false, tags = {"@login"})
 //plugin = "com.cucumber.listener.ExtentCucumberFormatter:target/report/tsr.html")
 public class Run {
     /*public static String xmlReport = new File ("src/main/resources/extent-config.xml").getAbsolutePath();

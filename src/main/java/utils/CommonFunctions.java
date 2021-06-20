@@ -37,5 +37,5 @@ public class CommonFunctions {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
     }
-    //somemore functions enteringKey scrolling downToPage
+
 }
