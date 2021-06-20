@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 public class CommonFunctions {
 
     public static WebDriver driver;
-    //public static WebDriver installation so we can use in any package in this project
 
     public void openBrowser()
     {
@@ -24,9 +23,9 @@ public class CommonFunctions {
     {
         driver.quit();
     }
-    public void waitForTime(int waittime)
+    public void waitForTime(int waitTime)
     {
-        driver.manage().timeouts().implicitlyWait(waittime, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(waitTime, TimeUnit.SECONDS);
     }
     public void waitForElement(WebElement element, int maxTime)
     {

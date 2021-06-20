@@ -13,6 +13,7 @@ public class BasketSteps extends CommonFunctions
     @Given("^I'm on the home page \"([^\"]*)\"$")
     public void i_m_on_the_home_page(String url) throws Throwable {
         driver.get(url);
+        driver.manage().window().maximize();
         WebElement elementInHomePage = driver.findElement(By.xpath("//a[text()='Help']"));
         Assert.assertTrue(elementInHomePage.isDisplayed());
     }
@@ -25,13 +26,15 @@ public class BasketSteps extends CommonFunctions
 
     @When("^I choose a submenu option \"([^\"]*)\"$")
     public void i_choose_a_submenu_option(String subMenu) throws Throwable {
-        WebElement subMenuOption = driver.findElement(By.xpath("//div[@data-parentname='MEN']/div/ul/li/div/a[text()='Jeans']"));
+        Thread.sleep(3000);
+         driver.findElement(By.xpath("//a[text()='"+subMenu+"']")).click();
        
     }
 
     @Then("^I should be in the appropriate results page \"([^\"]*)\"$")
     public void i_should_be_in_the_appropriate_results_page(String resultsHeader) throws Throwable {
-       
+       WebElement element = driver.findElement(By.xpath("//div[@class='SearchedFor']/h1"));
+       Assert.assertTrue(element.isDisplayed());
     }
 
 }
